@@ -3,9 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const handleResumeDownload = () => {
-    window.open("/files/Resume_Prashant.pdf", "_blank");
-  };
 
   return (
     <motion.section
@@ -18,7 +15,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Hi, I'm <span className="text-teal-600 dark:text-teal-400">Prashant Baral</span>
+        Hi, I am <span className="text-teal-600 dark:text-teal-400">Prashant Baral</span>
       </motion.h1>
 
       <motion.p

@@ -1,8 +1,6 @@
 "use client";
 
-import { spawn } from "child_process";
 import { motion } from "framer-motion";
-import { Span } from "next/dist/trace";
 import { FaGraduationCap, FaBriefcase } from "react-icons/fa";
 
 const qualifications = [

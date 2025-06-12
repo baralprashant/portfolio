@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
-import { FaReact, FaCode, FaPython, FaRobot, FaGamepad, FaServer  } from "react-icons/fa";
+import { FaCode, FaPython, FaRobot, FaGamepad} from "react-icons/fa";
 
 export default function Services() {
   return (
