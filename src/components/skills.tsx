@@ -13,7 +13,7 @@ import {
 const skills = [
   {
     title: "Frontend Development",
-    icon: <FaCode className="text-lime-500 text-2xl" />,
+    icon: <FaCode className="text-teal-500 text-2xl" />,
     skills: [
       "HTML5", "CSS3", "JavaScript", "Next.js", "React",
       "TypeScript", "Tailwind CSS", "Bootstrap", "Responsive Web Design",
@@ -45,7 +45,7 @@ const skills = [
   },
   {
     title: "Dev Tools & Workflow",
-    icon: <FaTools className="text-orange-500 text-2xl" />,
+    icon: <FaTools className="text-teal-500 text-2xl" />,
     skills: [
       "Git & GitHub", "TortoiseSVN", "VS Code", "Postman",
       "Linux/Unix", "Agile", "Scrum", "Docker",

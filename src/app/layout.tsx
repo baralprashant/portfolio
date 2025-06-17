@@ -8,6 +8,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 import { ThemeProvider } from "@/context/ThemeContext";
 import ThemeToggleButton from "@/components/ThemeToggleButton";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 
 import { Toaster } from "react-hot-toast"; //for cute pop-up
@@ -27,6 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="theme-color" content="#ffffff" />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -52,6 +57,7 @@ export default function RootLayout({
                 <Toaster position="top-center" reverseOrder={false} /> {/* email sent pop-up */}
                 <main className="flex-1 w-full pt-24 px-5">{children}</main>
                 <Footer />
+                <ScrollToTopButton />
                 {/* <GemAI /> Floating button now correctly inside layout */}
               </div>
           </ThemeProvider>

@@ -39,38 +39,34 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] sm:w-auto">
       <div
-        className={`flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 
-          px-3 sm:px-5 md:px-10 py-2 sm:py-3 md:py-4 
-          text-sm sm:text-base font-medium rounded-full shadow-xl transition-all duration-300 backdrop-blur-md
+        className={`flex flex-wrap justify-center items-center gap-1 sm:gap-3 md:gap-5 
+          px-3 sm:px-5 py-2 text-[12px] sm:text-sm md:text-base font-medium 
+          rounded-full shadow-xl transition-all duration-300 backdrop-blur-md 
           ${scrolled ? "bg-white/90 dark:bg-gray-900/90" : "bg-white/70 dark:bg-gray-900/70"}
         `}
       >
+        {navLinks.map((link) => {
+          const linkId = link.href.replace("#", "").toLowerCase();
+          const isActive = activeSection === linkId;
 
-        {/* Nav Links */}
-        <div className="flex justify-center items-center whitespace-nowrap gap-2 sm:gap-4 text-md sm:text-md overflow-x-auto px-2">
-          {navLinks.map((link) => {
-            const linkId = link.href.replace("#", "").toLowerCase();
-            const isActive = activeSection === linkId;
-
-            return (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`transition ${
-                  isActive
-                    ? "text-teal-600 dark:text-teal-400"
-                    : "text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400"
-                }`}
-              >
-                {link.name}
-              </a>
-            );
-          })}
-        </div>
+          return (
+            <a
+              key={link.name}
+              href={link.href}
+              className={`transition whitespace-nowrap ${
+                isActive
+                  ? "text-teal-600 dark:text-teal-400"
+                  : "text-gray-800 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400"
+              }`}
+            >
+              {link.name}
+            </a>
+          );
+        })}
       </div>
-
     </nav>
   );
+
 }
