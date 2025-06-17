@@ -65,14 +65,14 @@ export default function Skills() {
   return (
     <motion.section
       id="skills"
-      className="min-h-screen px-4 pt-24 pb-16 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+      className="min-h-screen px-4 py-28 pt-24 pb-16 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-center text-teal-600 mb-12"
+        className="text-5xl font-extrabold tracking-tight text-center text-teal-600 mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -90,13 +90,13 @@ export default function Skills() {
           >
             <div className="flex items-center gap-3 mb-4">
               {cat.icon}
-              <h3 className="text-xl font-semibold text-teal-600 dark:text-teal-400">{cat.title}</h3>
+              <h3 className="text-2xl font-semibold text-teal-600 dark:text-teal-400">{cat.title}</h3>
             </div>
             <ul className="flex flex-wrap gap-2 mt-2">
               {cat.skills.map((skill, i) => (
                 <motion.li
                   key={i}
-                  className="px-3 py-1 text-md rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-teal-100 dark:hover:bg-teal-700 transition-colors"
+                  className="px-3 py-1 text-lg rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-teal-100 dark:hover:bg-teal-700 transition-colors"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.03 }}

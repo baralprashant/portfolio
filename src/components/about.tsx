@@ -11,7 +11,7 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="min-h-screen px-6 pt-28 pb-16 flex items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+      className="min-h-screen px-6 py-28 pt-28 pb-16 flex items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -21,7 +21,7 @@ export default function About() {
         {/* Left Text Content */}
         <div className="text-center md:text-left flex-1">
           <motion.h2
-            className="text-4xl md:text-6xl font-extrabold text-teal-600 mb-5"
+            className="text-5xl font-extrabold tracking-tight text-teal-600 mb-5"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -29,11 +29,11 @@ export default function About() {
             About me
           </motion.h2>
 
-          <p className="text-lg md:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed mb-4">
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Hi, I’m <span className="font-semibold text-teal-600">Prashant Baral</span> — a passionate full-stack developer and AI/ML enthusiast. I’m currently pursuing my <span className="font-semibold"> Master’s in Computer Science at Pace University</span>.
           </p>
 
-          <p className="text-lg md:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed">
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             I thrive at the intersection of creativity and logic, designing clean UIs backed by powerful technology stacks like React, FastAPI, and machine learning tools. I enjoy building smart, elegant digital experiences that solve real-world problems.
           </p>
 

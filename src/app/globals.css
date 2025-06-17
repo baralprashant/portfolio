@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
 @tailwind base;
 @tailwind components;
@@ -68,5 +73,52 @@ html {
   .animate-floatRing {
     animation: pulseRing 4s ease-in-out infinite;
   }
+}
+
+/* Dot grid background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  pointer-events: none;
+  animation: subtle-move 20s linear infinite;
+}
+
+/* Smooth floating effect */
+@keyframes subtle-move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-20px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+html {
+  cursor: none;
+}
+
+.glow-pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,255,0.25) 0%, transparent 60%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  z-index: 50;
+  transition: transform 0.1s ease;
 }
 

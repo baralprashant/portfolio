@@ -78,7 +78,7 @@ export default function Qualification() {
                 </h4>
                 <p className="text-lg font-medium text-gray-800 dark:text-gray-200">{item.institution}</p>
                 <p className="text-md text-gray-500 mb-2">{item.time}</p>
-                <p className="text-md font-bold text-gray-700 dark:text-gray-300">{item.description}</p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{item.description}</p>
               </motion.div>
             </div>
           </motion.div>
@@ -90,10 +90,10 @@ export default function Qualification() {
   return (
     <motion.section
       id="qualification"
-      className="min-h-screen px-4 pt-24 pb-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+      className="min-h-screen px-4 py-28 pt-24 pb-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-center text-teal-600 mb-12"
+        className="text-5xl font-extrabold tracking-tight text-center text-teal-600 mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

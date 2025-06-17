@@ -48,10 +48,10 @@ export default function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="min-h-screen px-4 pt-24 pb-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+      className="min-h-screen px-4 py-28 pt-24 pb-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-center text-teal-600 mb-12"
+        className="text-5xl font-extrabold tracking-tight text-center text-teal-600 mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -62,12 +62,12 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
         {/* Left Column - Description & Icons */}
         <div className="space-y-6">
-          <p className="text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             I would love to hear from you — whether you have a project idea, a
             question, or just want to connect. Feel free to message me through
             the form or reach out directly via social platforms below.
           </p>
-          <p className="text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             I am always open to exciting opportunities, collaborations, and new
             ideas. Let&apos;s build something impactful together!
           </p>
@@ -109,7 +109,7 @@ export default function Contact() {
           className="bg-white dark:bg-gray-800 bg-opacity-80 backdrop-blur-md p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-teal-400 dark:hover:border-teal-400"
         >
           <motion.h3
-            className="text-2xl font-extrabold text-teal-600 mb-12"
+            className="text-3xl font-extrabold text-teal-600 mb-12"
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >

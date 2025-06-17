@@ -12,10 +12,10 @@ export default function Services() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="min-h-screen px-4 pt-28 pb-10 flex flex-col items-center justify-center text-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+      className="min-h-screen px-4 py-28 pt-28 pb-10 flex flex-col items-center justify-center text-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-center text-teal-600 mb-12"
+        className="text-5xl font-extrabold tracking-tight text-center text-teal-600 mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -71,7 +71,7 @@ function ServiceCard({
         <Icon className="text-2xl" />
       </div>
       <h3 className="text-lg font-semibold text-teal-800 dark:text-teal-400 mb-2">{title}</h3>
-      <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">{description}</p>
+      <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{description}</p>
     </motion.div>
   );
 }

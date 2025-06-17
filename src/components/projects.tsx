@@ -54,10 +54,10 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      className="min-h-screen px-4 pt-24 pb-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+      className="min-h-screen px-4 py-28 pt-24 pb-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
     >
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-center text-teal-600 mb-12"
+        className="text-5xl font-extrabold tracking-tight text-center text-teal-600 mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -94,8 +94,8 @@ export default function Projects() {
                   <h3 className="text-xl font-semibold text-teal-600 dark:text-teal-400">{project.title}</h3>
                 )}
               </div>
-              <p className="text-gray-700 dark:text-gray-400 mt-2 text-lg">{project.description}</p>
-              <p className="text-md text-gray-500 dark:text-gray-300 mt-2 italic">Tech Used: {project.tech}</p>
+              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{project.description}</p>
+              <p className="text-lg text-gray-500 dark:text-gray-300 mt-2 italic">Tech Used: {project.tech}</p>
             </div>
           </motion.div>
         ))}
