@@ -37,7 +37,7 @@ const skills = [
   },
   {
     title: "Data & Visualization",
-    icon: <FaDatabase className="text-blue-500 text-2x l" />,
+    icon: <FaDatabase className="text-blue-500 text-2xl" />,
     skills: [
       "SQL", "MySQL", "PostgreSQL", "Jupyter", "Google Colab",
       "Power BI", "Tableau", "Google Suite", "MS 365",
@@ -65,7 +65,7 @@ export default function Skills() {
   return (
     <motion.section
       id="skills"
-      className="min-h-screen px-4 py-28 pt-24 pb-16 bg-transparent text-gray-900 dark:text-white"
+      className="min-h-screen px-4 py-28 pt-24 pb-16 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

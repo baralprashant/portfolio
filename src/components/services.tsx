@@ -65,7 +65,7 @@ function ServiceCard({
     <motion.div
       whileHover={{ scale: 1.03 }}
       transition={{ duration: 0.4 }}
-      className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-teal-400 dark:hover:border-teal-400"
+      className="bg-white dark:bg-gray-800 bg-opacity-80 backdrop-blur-md p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-teal-400 dark:hover:border-teal-400"
     >
       <div className="flex items-center justify-center w-14 h-14 rounded-full bg-teal-100 dark:bg-teal-300 text-teal-600 dark:text-teal-900 mb-4 mx-auto shadow group-hover:shadow-lg transition">
         <Icon className="text-2xl" />
