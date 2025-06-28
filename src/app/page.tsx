@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Hero from "@/components/Hero";
 import About from "@/components/about";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
