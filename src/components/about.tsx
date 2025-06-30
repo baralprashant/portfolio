@@ -89,7 +89,7 @@ export default function About() {
           {/* Profile Image */}
           <div className="will-change-transform transition-transform duration-500 ease-in-out hover:scale-110 hover:rotate-3">
             <Image
-              src="/prashant.jpg"
+              src="/prashant.webp"
               alt="Prashant Baral"
               width={256}
               height={256}
