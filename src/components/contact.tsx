@@ -32,8 +32,9 @@ export default function Contact() {
 
       // NEW: Log to backend PostgreSQL
       const sessionId = localStorage.getItem("sessionId");
+      const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-      await fetch("http://localhost:8000/submit-contact/", {
+      await fetch(`${backendURL}/submit-contact/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: form.name,
@@ -77,7 +78,7 @@ export default function Contact() {
         {/* Left Column - Description & Icons */}
         <div className="space-y-6">
           <p className="text-xl text-gray-800 dark:text-gray-200 leading-relaxed">
-            I would love to hear from you — whether you have a project idea, a
+            I would love to hear from you — whethis you have a project idea, a
             question, or just want to connect. Feel free to email me at <a href="mailto:thedashh7@gmail.com"
               onClick={() => logSessionEvent("clicked_social", "email from contact")}
               className="text-xl text-teal-500 hover:text-teal-600 transition transform hover:scale-100">
@@ -132,8 +133,7 @@ export default function Contact() {
           </h3>
 
           <div className="mb-4">
-            <label className="text-xl block text-gray-800 dark:text-gray-200 font-medium">Name</label>
-            <input
+             <input
               type="text"
               name="name"
               value={form.name}
@@ -145,7 +145,6 @@ export default function Contact() {
           </div>
 
           <div className="mb-4">
-            <label className="text-xl block text-gray-800 dark:text-gray-200 font-medium">Email</label>
             <input
               type="email"
               name="email"
@@ -158,7 +157,6 @@ export default function Contact() {
           </div>
 
           <div className="mb-4">
-            <label className="text-xl block text-gray-800 dark:text-gray-200 font-medium">Subject</label>
             <input
               type="text"
               name="subject"
@@ -166,12 +164,11 @@ export default function Contact() {
               onChange={handleChange}
               required
               className="text-xl w-full mt-1 px-4 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 bg-gray-100 dark:bg-gray-900 placeholder-gray-500 text-gray-900 dark:text-white"
-              placeholder="Your Subject"
+              placeholder="Subject"
             />
           </div>
 
           <div className="mb-4">
-            <label className="text-xl block text-gray-800 dark:text-gray-200 font-medium">Message</label>
             <textarea
               name="message"
               value={form.message}
@@ -179,7 +176,7 @@ export default function Contact() {
               required
               rows={4}
               className="text-xl w-full mt-1 px-4 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 bg-gray-100 dark:bg-gray-900 placeholder-gray-500 text-gray-900 dark:text-white"
-              placeholder="Your Message"
+              placeholder="Type Your Message Here..."
             />
           </div>
 

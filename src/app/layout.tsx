@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Prashant Baral",
     images: [
       {
-        url: "https://prashantbaral.com.np/prashant.jpg",
+        url: "https://prashantbaral.com.np/prashant.webp",
         width: 1200,
         height: 630,
         alt: "Prashant Baral",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prashant Baral | Full-Stack & AI Developer",
     description: "Explore Prashant's projects, resume, and GemAI agent.",
-    images: ["https://prashantbaral.com.np/prashant.jpg"],
+    images: ["https://prashantbaral.com.np/prashant.webp"],
   },
 };
 
@@ -59,7 +59,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="canonical" href="https://prashantbaral.com.np" />
-        <link rel="preload" as="image" href="/Prashant.jpg" />
+        <link rel="preload" as="image" href="/Prashant.webp" />
         {/* -- Google tag (gtag.js) -- */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBMTWGXVWD"></script>
         <script

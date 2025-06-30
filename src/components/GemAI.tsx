@@ -54,9 +54,9 @@ export default function GemAI() {
 
     // ✅ Get session_id from localStorage
     const session_id = localStorage.getItem("sessionId") || "unknown";
+    const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-
-    const res = await fetch("http://localhost:8000/ai-agent/", {
+    const res = await fetch(`${backendURL}/ai-agent/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -103,7 +103,7 @@ export default function GemAI() {
       {/* Floating Button */}
       <div
    //   className="fixed bottom-5 right-5 z-[100] cursor-pointer bg-white dark:bg-gray-800 border border-teal-300 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition"
-        className="fixed bottom-[60px] right-[60px] z-[100] cursor-pointer w-[70px] h-[70px] rounded-full border border-teal-400 bg-white dark:bg-gray-900 shadow-lg hover:scale-105 transition flex items-center justify-center"
+        className="fixed bottom-[60px] right-[30px] z-[100] cursor-pointer w-[40px] h-[40px] rounded-full border border-teal-400 bg-white dark:bg-gray-900 shadow-lg hover:scale-105 transition flex items-center justify-center"
         onClick={() => setShow(!show)}
       >
         {show ? (
@@ -112,9 +112,9 @@ export default function GemAI() {
           <Image
             src="/images/gemailogo.webp"
             alt="GemAI"
-            width={60}
-            height={60}       
-            className="w-[60px] h-[60px] rounded-full object-cover"
+            width={35}
+            height={35}       
+            className="w-[35px] h-[35px] rounded-full object-cover"
             loading="lazy"
           />
         )}
@@ -124,20 +124,20 @@ export default function GemAI() {
       {/* Chat Window */}
       {show && (
         <motion.div
-          className="fixed bottom-[140px] right-[60px] z-[100] w-[500px] h-[700px] bg-white shadow-xl rounded-lg border border-gray-300 flex flex-col overflow-hidden"
+          className="fixed bottom-[120px] right-[60px] z-[100] w-[400px] h-[550px] bg-white shadow-xl rounded-lg border border-gray-300 flex flex-col overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <div className="text-xl bg-teal-600 text-white text-center p-4 font-semibold">
+          <div className="text-lg bg-teal-600 text-white text-center p-3 font-semibold">
             GemAI - Ask About Prashant
           </div>
 
-          <div className="flex-1 overflow-y-auto p-3 space-y-2">
+          <div className="flex-1 overflow-y-auto p-2 space-y-2">
             {messages.map((msg, idx) => (
               <div key={idx} className="w-full flex flex-col">
                 {/* Message Bubble */}
                 <motion.div
-                  className={`p-3 rounded-lg text-lg max-w-[75%] whitespace-pre-line ${
+                  className={`p-2 rounded-lg text-md max-w-[75%] whitespace-pre-line ${
                     msg.role === "user"
                       ? "bg-teal-100 text-teal-800 self-end"
                       : "bg-gray-100 text-gray-800 self-start"
@@ -180,7 +180,7 @@ export default function GemAI() {
 
                 {/* Timestamp + Status or Copy Icon */}
                 <div
-                  className={`mt-1 text-md text-gray-500 flex items-center gap-2 ${
+                  className={`mt-1 text-sm text-gray-500 flex items-center gap-2 ${
                     msg.role === "user"
                       ? "justify-end pr-1 self-end"
                       : "justify-start pl-1 self-start"
@@ -199,9 +199,9 @@ export default function GemAI() {
                       title="Copy response"
                     >
                       {copiedIndex === idx ? (
-                        <FiCheck className="text-lg text-green-500" />
+                        <FiCheck className="text-md text-green-500" />
                       ) : (
-                        <FiCopy className="text-lg hover:text-teal-500" />
+                        <FiCopy className="text-md hover:text-teal-500" />
                       )}
                     </button>
                   )}
@@ -213,10 +213,10 @@ export default function GemAI() {
           </div>
 
           {/* Input Section */}
-          <div className="p-3 border-t flex items-center gap-2">
+          <div className="p-2 border-t flex items-center gap-2">
             <input
              // className="flex-1 border border-gray-300 p-2 rounded-lg text-sm"
-              className="text-lg flex-1 border border-gray-300 p-2 rounded-lg bg-gray-100 dark:bg-gray-100 placeholder-gray-500 text-gray-900"
+              className="text-md flex-1 border border-gray-300 p-2 rounded-lg bg-gray-100 dark:bg-gray-100 placeholder-gray-500 text-gray-900"
               placeholder="Ask about Prashant..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -226,7 +226,7 @@ export default function GemAI() {
               className="bg-teal-600 text-white p-3 rounded hover:bg-teal-700"
               onClick={sendMessage}
             >
-              <FiSend size={18} />
+              <FiSend size={15} />
             </button>
           </div>
         </motion.div>

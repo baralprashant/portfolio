@@ -7,16 +7,15 @@ export const sendEmail = async (
   subject: string,
   message: string
 ) => {
-  const serviceID = "service_qmkjl42";
-  const templateID = "template_mvrkt78";
-  const publicKey = "-GIxs3C0OZrk9K4sF"; // make sure this matches your dashboard
+  const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+  const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
   const templateParams = {
     name,
     email,
     subject,
     message,
-    // reply_to: email,
   };
 
   try {

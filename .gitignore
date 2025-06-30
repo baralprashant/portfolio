@@ -10,15 +10,20 @@
 !.yarn/releases
 !.yarn/versions
 
+/venv
+venv/
+
 # testing
 /coverage
 
 # next.js
 /.next/
 /out/
+.next/
 
 # production
 /build
+build/
 
 # misc
 .DS_Store

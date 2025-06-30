@@ -11,8 +11,9 @@ export default function About() {
     window.open("/files/PrashantResume.pdf", "_blank");
 
     const sessionId = localStorage.getItem("sessionId");
+    const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-    fetch("http://localhost:8000/log-session-event/", {
+    fetch(`${backendURL}/log-session-event/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,17 +27,19 @@ export default function About() {
     
   };
 
-  useEffect(() => {
-    const sessionId = localStorage.getItem("sessionId");
+    useEffect(() => {
+      const sessionId = localStorage.getItem("sessionId");
+      const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-    fetch("http://localhost:8000/log-page-visit/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ page: "about", session_id: sessionId }),
-    });
-  }, []);
+      fetch(`${backendURL}/log-page-visit/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ page: "about", session_id: sessionId }),
+      });
+    }, []);
+
 
 
   
