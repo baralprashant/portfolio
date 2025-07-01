@@ -17,12 +17,11 @@ from routes.gemai import router as gemai_router
 from routes.contact import router as contact_router
 from routes.logging_routes import router as logging_router
 
-
-
 # ---------------------- FastAPI Setup ----------------------
 
 app = FastAPI()
 
+#only one frontend for now used: prashantbaral.com.np
 origins = os.getenv("NEXT_PUBLIC_FRONTEND_URL", "").split(",")
 app.add_middleware(
     CORSMiddleware,
