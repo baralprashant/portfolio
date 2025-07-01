@@ -1,9 +1,8 @@
 export const logErrorEvent = async (error: unknown, location: string) => {
   const sessionId = localStorage.getItem("sessionId");
-  const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   try {
-    await fetch(`${backendURL}/log-error/`, {
+    await fetch("http://3.149.229.174:8080/log-error/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

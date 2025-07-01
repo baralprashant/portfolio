@@ -32,9 +32,8 @@ export default function Contact() {
 
       // NEW: Log to backend PostgreSQL
       const sessionId = localStorage.getItem("sessionId");
-      const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-      await fetch(`${backendURL}/submit-contact/`, {
+      await fetch("http://3.149.229.174:8080/submit-contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: form.name,
