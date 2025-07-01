@@ -114,12 +114,10 @@ vectorstore = setup_vectorstore()
 portfolio_docs = load_portfolio_docs()
 
 
-
-
 # ---------------------- AI Agent Endpoint ----------------------
 class QueryRequest(BaseModel):
    query: str
-   session_id: Optional[str] = None  # ✅ add this
+   session_id: Optional[str] = None 
 
 
 # Small talk handler
