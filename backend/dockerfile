@@ -2,17 +2,24 @@
 FROM python:3.11-slim
 
 # Set working directory inside the container
-WORKDIR /backend
+WORKDIR /app
 
-# Install Python dependencies
+# Install system dependencies (for psycopg2 etc.)
+RUN apt-get update && apt-get install -y gcc libpq-dev postgresql-client && apt-get clean
+
+
+# Copy requirements and install
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all backend code
+# Copy backend code
 COPY . .
 
 # Set environment port
 ENV PORT=8080
 
-# Run the FastAPI app with Uvicorn
+# Expose the port
+EXPOSE 8080
+
+# Run FastAPI using Uvicorn
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
