@@ -21,11 +21,9 @@ from routes.logging_routes import router as logging_router
 
 app = FastAPI()
 
-#only one frontend for now used: prashantbaral.com.np
-origins = os.getenv("NEXT_PUBLIC_FRONTEND_URL", "").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["https://www.prashantbaral.com.np"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
