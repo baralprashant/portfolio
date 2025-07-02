@@ -16,6 +16,7 @@ fastapi==0.115.12
 filelock==3.18.0
 frozenlist==1.6.2
 fsspec==2025.5.1
+googleapis-common-protos==1.70.0
 greenlet==3.2.3
 grpcio==1.73.1
 grpcio-status==1.71.2
@@ -50,6 +51,7 @@ orjson==3.10.18
 packaging==24.2
 pillow==11.2.1
 propcache==0.3.1
+protobuf==5.29.5
 psycopg2==2.9.10
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
@@ -83,6 +85,7 @@ transformers==4.52.4
 typing-inspect==0.9.0
 typing-inspection==0.4.1
 typing_extensions==4.14.0
+tzdata==2025.2
 urllib3==2.4.0
 uvicorn==0.34.3
 yarl==1.20.0

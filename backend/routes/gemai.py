@@ -1,6 +1,7 @@
 # routes/gemai.py
 import os
 from datetime import datetime
+from utils.timezone import ny_now_iso
 from typing import Optional, List
 from fastapi import APIRouter
 from pydantic import BaseModel
@@ -384,7 +385,7 @@ Answer using markdown only. Never invent or guess information not in the context
    session = SessionLocal()
    log = GemAILog(
        session_id=session_id,  # <- store it
-       timestamp=datetime.utcnow().isoformat(),
+       timestamp=ny_now_iso(),
        question=query,
        response=answer,
       

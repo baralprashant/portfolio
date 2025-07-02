@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter
 from pydantic import BaseModel
-from datetime import datetime
+from utils.timezone import ny_now_iso
 from typing import Optional  # ✅ <-- Add this
 
 from database.create_tables import SessionLocal
@@ -26,7 +26,7 @@ async def submit_contact_form(req: ContactFormRequest):
         subject=req.subject,
         message=req.message,
         session_id=req.session_id,  # ✅ Save session ID
-        timestamp=datetime.utcnow().isoformat()
+        timestamp=ny_now_iso(),
     )
     session.add(log)
     session.commit()

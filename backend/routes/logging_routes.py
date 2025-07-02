@@ -1,7 +1,7 @@
 # routes/logging_routes.py
 
 from fastapi import APIRouter, Request
-from datetime import datetime
+from utils.timezone import ny_now_iso
 
 from database.create_tables import SessionLocal
 from database.models import PageVisit, SessionEvent, ErrorLog
@@ -21,7 +21,7 @@ async def log_page_visit(request: Request):
     session = SessionLocal()
     log = PageVisit(
         session_id=session_id,
-        timestamp=datetime.utcnow().isoformat(),
+        timestamp=ny_now_iso(),
         page_name=page_name,
         ip_address=ip_address,
         user_agent=user_agent
@@ -43,7 +43,7 @@ async def log_session_event(request: Request):
     session = SessionLocal()
     log = SessionEvent(
         session_id=session_id, # store it
-        timestamp=datetime.utcnow().isoformat(),
+        timestamp=ny_now_iso(),
         event_type=event_type,
         details=details,
     )
@@ -65,7 +65,7 @@ async def log_error(request: Request):
     session = SessionLocal()
     log = ErrorLog(
         session_id=session_id,  # ✅ store session_id
-        timestamp=datetime.utcnow().isoformat(),
+        timestamp=ny_now_iso(),
         error_message=error_message,
         context=context,
     )
