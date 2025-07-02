@@ -54,8 +54,9 @@ export default function GemAI() {
 
     // ✅ Get session_id from localStorage
     const session_id = localStorage.getItem("sessionId") || "unknown";
+    const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-    const res = await fetch("http://3.149.229.174:8080/ai-agent/", {
+    const res = await fetch(`${backendURL}/ai-agent/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
