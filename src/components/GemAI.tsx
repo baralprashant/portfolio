@@ -124,7 +124,7 @@ export default function GemAI() {
       {/* Chat Window */}
       {show && (
         <motion.div
-          className="fixed bottom-[120px] right-[60px] z-[100] w-[400px] h-[550px] bg-white shadow-xl rounded-lg border border-gray-300 flex flex-col overflow-hidden"
+          className="fixed bottom-[105px] right-[35px] z-[100] w-[350px] h-[500px] bg-white shadow-xl rounded-lg border border-gray-300 flex flex-col overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >

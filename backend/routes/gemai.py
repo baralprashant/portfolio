@@ -1,6 +1,5 @@
 # routes/gemai.py
 import os
-from datetime import datetime
 from utils.timezone import ny_now_iso
 from typing import Optional, List
 from fastapi import APIRouter
