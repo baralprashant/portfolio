@@ -22,7 +22,7 @@ from routes.ping import router as ping_router
 
 app = FastAPI()
 
-origins = os.getenv("NEXT_PUBLIC_FRONTEND_URL", "").split(",")
+# origins = os.getenv("NEXT_PUBLIC_FRONTEND_URL", "").split(",")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
