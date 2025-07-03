@@ -24,7 +24,11 @@ app = FastAPI()
 origins = os.getenv("NEXT_PUBLIC_FRONTEND_URL", "").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=[
+      "http://localhost:3000",
+      "https://prashantbaral.com.np",
+      "https://www.prashantbaral.com.np"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
