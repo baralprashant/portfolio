@@ -40,9 +40,6 @@ export default function About() {
       });
     }, []);
 
-
-
-  
   
   return (
     <section id="about" className="min-h-screen px-4 pt-24 pb-10 bg-transparent">        
