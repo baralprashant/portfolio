@@ -11,7 +11,7 @@
 !.yarn/versions
 
 /venv/
-
+backend/venv/
 # testing
 /coverage
 
