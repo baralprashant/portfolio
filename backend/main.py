@@ -16,6 +16,7 @@ create_all_tables()
 from routes.gemai import router as gemai_router
 from routes.contact import router as contact_router
 from routes.logging_routes import router as logging_router
+from routes.ping import router as ping_router
 
 # ---------------------- FastAPI Setup ----------------------
 
@@ -44,3 +45,4 @@ def home():
 app.include_router(gemai_router)
 app.include_router(contact_router)
 app.include_router(logging_router)
+app.include_router(ping_router)
